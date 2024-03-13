@@ -59,3 +59,15 @@ Lalu akan ada pilihan menu untuk berpetualang, seperti cari NPC, cari Item di wi
 jika kita berinteraksi dengan NPC baik, ada kemungkinan NPC baik tersebut akan memberikan misi dan ketika kita selesai menyelesaikan misi maka kita akan mendapat hadiah.
 NPC baik juga terkadang menjual beberapa barang.
 Kita juga dapat melawan musuh, dan ketika menang kita akan mendapat item drop dari musuhnya.
+
+<h3>Dokumentasi dari beberapa SS</h3>
+
+![SS1](https://github.com/WildanRaffians/TP1DPBO2024C2/assets/134181656/5d22a8dc-6e6b-4e70-b74e-5f56a060f1fe)
+
+![SS2](https://github.com/WildanRaffians/TP1DPBO2024C2/assets/134181656/e93708c0-1c2e-4751-a37d-13a052ea33a3)
+
+![SS3](https://github.com/WildanRaffians/TP1DPBO2024C2/assets/134181656/a17c19f9-3b12-424f-aab5-d1d1f1053ddb)
+
+![SS4](https://github.com/WildanRaffians/TP1DPBO2024C2/assets/134181656/a7cb0455-9943-48b0-9a1d-9b512fe34b7b)
+
+![SS5](https://github.com/WildanRaffians/TP1DPBO2024C2/assets/134181656/9ae0fa80-9ea0-446c-96f9-3248bb840900)
