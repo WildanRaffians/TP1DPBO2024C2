@@ -1,11 +1,12 @@
 from PlayerKarakter import PlayerKarakter
 
+# Kelas Player
 class Player:
     def __init__(self, idPlayer="", namaPlayer="", umur=0, playerkarakter=[]):
         self.__idPlayer = idPlayer
         self.__namaPlayer = namaPlayer
         self.__umur = umur
-        self.__playerkarakter = playerkarakter
+        self.__playerkarakter = playerkarakter  #Player memiliki karakter
 
     # Setter untuk idPlayer
     def set_idPlayer(self, idPlayer):
@@ -27,10 +28,11 @@ class Player:
     def set_umur(self, umur):
         self.__umur = umur
 
-    # Getter untuk playerkarakter
+    # Getter untuk umur
     def get_umur(self):
         return self.__umur
     
+    # Setter untuk playerkarakter
     def set_playerkarakter(self, playerkarakter):
         self.__playerkarakter = playerkarakter
 
@@ -38,5 +40,6 @@ class Player:
     def get_playerkarakter(self):
         return self.__playerkarakter
 
+    # Method untuk Menambah playerkarakter
     def tambah_playerkarakter(self, playerkarakter):
         self.__playerkarakter.append(playerkarakter)

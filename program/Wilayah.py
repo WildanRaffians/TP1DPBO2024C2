@@ -1,5 +1,5 @@
+# Kelas Wilayah
 class Wilayah:
-
     def __init__(self, nama="", deskripsi="", item=[], niceNpc=[], enemyNpc=[]):
         self.__nama = nama
         self.__deskripsi = deskripsi
@@ -7,6 +7,7 @@ class Wilayah:
         self.__niceNpc = niceNpc
         self.__enemyNpc = enemyNpc
 
+    # Setter dan Getter
     def set_nama(self, nama):
         self.__nama = nama
 

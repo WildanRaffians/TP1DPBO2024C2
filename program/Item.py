@@ -1,11 +1,5 @@
 #Class Item
 class Item:
-    #Atribut
-    __idItem = ""
-    __nama = ""
-    __deskripsi = ""
-    __jumlah = 0
-
     def __init__(self, idItem="", nama="", deskripsi="", jumlah=0):
         self.__idItem = idItem
         self.__nama = nama

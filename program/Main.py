@@ -23,18 +23,21 @@ import time
 # Inisialisasi colorama
 init()
 
+# Siapkan data------------------------\
+# Data status
 statusDPS = Status(1, 1000, 100, 500, 800)
 statusSupport = Status(1, 1000, 100, 200, 1000)
 statusHealer = Status(1, 1800, 100, 100, 600)
 statusEnemy1 = Status(5, 1500, 100, 800, 1000)
 
-missplitter = Senjata("Pedang", "Missplitter", 680, "ATK", 45)
+# Data senjata
 listSenjata = []
 listSenjata.append(Senjata("Pedang", "Dull Blade", 560, "ATK", 35))
 listSenjata.append(Senjata("Panah", "Aqua Simularca", 580, "DEF", 35))
 listSenjata.append(Senjata("Tombak", "Engulfing Lightning", 580, "ATK", 45))
 listSenjata.append(Senjata("Tongkat Sihir", "Everlasting Moonglow", 580, "Max HP", 55))
 
+# Data Skill
 listSkillDPS = []
 listSkillHealer = []
 listSkillSupport = []
@@ -45,19 +48,20 @@ listSkillDPS.append(bolaApi)
 listSkillHealer.append(Skill("Kelopak Bunga", 20, "Mengeluarkan kelopak bunga raksasa, Memulihkan HP pemilik skill dan rekan tim sebesar 20% Max HP", 15))
 listSkillSupport.append(Skill("Penempa Baja", 12, "Mengeluarkan Palu penempa, Meningkatkan ATK rekan tim sebesar 12% ATK pengguna", 20))
 
+# Data Item
 item01 = Item("IT0001", "Koin", "Mata uang untuk jual beli", 100000)
 item21 = Item("IT0021", "Koin", "Mata uang untuk jual beli", 50000)
 item22 = Item("IT0022", "Batu Ajaib", "Batu memancarkan cahaya yang aneh tapi menyejukan, pasti berguna suatu saat", 1)
 item23 = Item("IT0021", "Koin", "Mata uang untuk jual beli", 20000)
 item24 = Item("IT0024", "Bola Salju", "Bola salju sekepal tangan", 4)
-
-itemj11 = ItemDijual("ITJ0011", "Ramuan Rahasia", "Ramuan yang memeberikan efek tertentu", 10, 2000)
-itemj12 = ItemDijual("ITJ0012", "Ramuan Rahasia2", "Ramuan yang memeberikan efek tertentu", 10, 2000)
-
 item31 = Item("IT0031", "Dandelion", "Bunga Dandelion", 5)
 item32 = Item("IT0032", "Cecilia", "Bunga Cecilia", 5)
 item33 = Item("IT0033", "Burnett", "Bunga Burnett", 5)
 item34 = Item("IT0034", "Hybrid Prikly Burr", "Bunga Hybrid Prikly Burr", 5)
+
+# Data item dijual
+itemj11 = ItemDijual("ITJ0011", "Ramuan Rahasia", "Ramuan yang memeberikan efek tertentu", 10, 2000)
+itemj12 = ItemDijual("ITJ0012", "Ramuan Rahasia2", "Ramuan yang memeberikan efek tertentu", 10, 2000)
 
 listItemku = []
 listItemku.append(item01)
@@ -65,6 +69,7 @@ listItemKhatarine = []
 listItemKhatarine.append(itemj11)
 listItemKhatarine.append(itemj12)
 
+# Data misi dan hadiah
 misiKatarine = []
 listHadiahK1 = []
 listHadiahK2 = []
@@ -79,6 +84,7 @@ listMisiK.append(misi1)
 listMisiK.append(misi2)
 Khatarine1 = NiceNPC("Khatarine", "Resepsionis Guild", listItemKhatarine, listMisiK)
 
+# Data item dan NPC di wilayah
 listItemMondo = []
 listItemMondo.append(item31)
 listItemMondo.append(item32)
@@ -88,6 +94,7 @@ listItemBolobog.append(item34)
 listNiceNPCMondo = []
 listNiceNPCMondo.append(Khatarine1)
 
+# Data enemy
 dropItemEnemy1 = []
 dropItemEnemy1.append(item23)
 dropItemEnemy1.append(item24)
@@ -95,6 +102,7 @@ enemyBolobog1 = EnemyNPC("Gordon", "Penjaga Gua", statusEnemy1, terjanganEs, dro
 listEnemyNPCBolobog = []
 listEnemyNPCBolobog.append(enemyBolobog1)
 
+# Wilayah
 mondo = Wilayah("Mondo", "Ini Merupakan kota awal bagi para petualang pemula.", listItemMondo, listNiceNPCMondo)
 bolobog = Wilayah("Bolobog", "Kota yang sudah diselimuti es selama ratusan tahun", listItemBolobog, enemyNpc=listEnemyNPCBolobog)
 
@@ -103,24 +111,31 @@ listWilayah.append(mondo)
 listWilayah.append(bolobog)
 
 # Tampilan =================================================================================================================
+# Masukkan nama dan umur player
 print("Isi Data...")
 namaPlayer = str(input("Nama Player : "))
 umurPlayer = int(input("Umur Player : "))
 player1 = Player("P0001", namaPlayer, umurPlayer)
 
+# Selamat Datang
 print("")
 notif = Tabel()
 haiPlayer = "Hai " + Fore.BLUE + player1.get_namaPlayer() + Style.RESET_ALL + "!"
-selamatDatang = "Selamat datang di game In!"
+selamatDatang = "Selamat Datang di Game Odisea!"
 isiNotif = [haiPlayer, selamatDatang]
 notif.buat_tabel_notif(2, isiNotif, 1)
 print("")
 
+# Buat karakter
+print("Berpetualang di dunia yang menakjubkan.")
+print("")
 print("Ayo Buat Karaktermu!")
 time.sleep(0.5)
 karakter1 = PlayerKarakter()
+# Nama karakter
 namaKar = str(input("Nama Karakter : "))
 karakter1.set_nama(namaKar)
+# Gender Karakter
 gender = 0
 while(gender == 0):
     print("")
@@ -139,6 +154,7 @@ while(gender == 0):
         print("")
         gender = 0
 
+# Role Karakter
 role = 0
 while(role == 0):
     print("")
@@ -150,7 +166,9 @@ while(role == 0):
     role = int(input("> "))
     print("")
 
+# Pilih skill berdasar role 
     if(role == 1):
+        # Role DPS
         karakter1.set_role("DPS")
         print("Silahkan Pilih Skill yang Kamu Inginkan :")
         #Tabel Skill
@@ -263,7 +281,7 @@ while(role == 0):
         print("")
         role = 0
         
-
+# Pilih Senjata awal
 #Tabel Senjata
 print("")
 print("Silahkan Pilih Senjata Pertamamu!")
@@ -285,6 +303,7 @@ head = ["No", "Tipe", "Nama", "+ ATK", "Bonus", "+ Bonus %"]
 tab = Tabel()
 tab.buat_tabel(len(listSenjata), 6, isiTabel, head)
 
+# Add senjata pilihan
 senjatafound = 0
 while (senjatafound==0):
     print("")
@@ -299,9 +318,12 @@ while (senjatafound==0):
         print("[[Pilihan Tidak Valid]]")
         print("")
 
+# Set item awal
 karakter1.set_item(listItemku)
 time.sleep(1)
 print("")
+
+# Karakter berhasil dibuat
 berhasil = "Karakter Berhasil dibuat!"
 isiNotif = [berhasil]
 notif.buat_tabel_notif(1, isiNotif, 0)
@@ -336,6 +358,7 @@ head2 = ["Level", "Max HP", "ATK", "DEF", "HP Saat Ini"]
 
 tab.buat_tabel_status(isiTabel1, isiTabel2, head1, head2)
 
+# Tampilkan Item
 #Tabel Item
 print("")
 print("Itemku")
@@ -355,7 +378,6 @@ head = ["No", "Nama", "Deskripsi", "Jumlah"]
 tab = Tabel()
 tab.buat_tabel(len(listItemku), 4, isiTabel, head)
 
-
 # time.sleep(1)
 print("")
 print("")
@@ -368,10 +390,11 @@ print("")
 input("Tekan Enter...")
 print("")
 
-wilayah = 0
-exit = 0
-aksi = -1
+wilayah = 0     #Wilayah awal
+exit = 0    
+aksi = -1       #input
 while(aksi != exit):
+    # Menu
     print("")
     print("")
     selamatDatang = "Selamat Datang di "+ Fore.CYAN + listWilayah[wilayah].get_nama() + Style.RESET_ALL + "!" 
@@ -397,6 +420,7 @@ while(aksi != exit):
     print("")
     
     if(aksi == 1):
+        # Cari NPC
         aksi = -1
         end = 0
 
@@ -433,6 +457,7 @@ while(aksi != exit):
             print("")
 
             if(aksi != i):
+                # NPC terpilih
                 npc = aksi-1
                 print("(Hai! Saya " + listWilayah[wilayah].get_niceNpc()[npc].get_nama() + ", ada yang bisa saya bantu?)")
 
@@ -447,6 +472,7 @@ while(aksi != exit):
                 print("")
 
                 if(aksi == 1):
+                    # Misi
                     statmisi1 = 0
                     statmisi0 = 0
                     for misi in listWilayah[wilayah].get_niceNpc()[npc].get_misi() :
@@ -492,7 +518,7 @@ while(aksi != exit):
                                 print("[[Masukan tidak valid]]")
                                 print("")
                             else:
-                                listWilayah[wilayah].get_niceNpc()[npc].get_misi()[misi].melakukan_misi()
+                                listWilayah[wilayah].get_niceNpc()[npc].get_misi()[misi].sedang_dikerjakan()
                                 # print(misi)
                                 
                                 print("")
@@ -526,7 +552,9 @@ while(aksi != exit):
 
                             print("")
                             input("Tekan Enter...")
+                            print("")
                 elif(aksi == 2):
+                    # Beli item
                     endbeli = 0
                     aksi = -1
                     while(endbeli==0):
@@ -618,6 +646,7 @@ while(aksi != exit):
                 end=1
                 
     elif(aksi == 2):
+        # Cari item di wilayah
         aksi = -1
         i = -1
         while(aksi != i+1):
@@ -676,6 +705,7 @@ while(aksi != exit):
                 print("")
                 
     elif(aksi == 3):
+        # Cari musuh di wilayah
         aksi = -1
         end = 0
 
@@ -769,6 +799,7 @@ while(aksi != exit):
                 elif(aksi == idxAwal+1):
                     end=1
     elif(aksi == 4):
+        # Tampilkan status karakter
         print("Status Karakter:")
         isiTabel1 = []
         isiTabel2 = []
@@ -796,6 +827,7 @@ while(aksi != exit):
         print("")
     
     elif(aksi == 5):
+        # Tampilkan Item
         #Tabel Item
         print("")
         print("Itemku")
@@ -819,6 +851,7 @@ while(aksi != exit):
         input("Tekan Enter...")
         print("")
     elif(aksi == 6):
+        # Tampilkan WIlayah
         #Tabel Wilayah
         print("")
         print("Wilayah Pulau Ini")
@@ -843,7 +876,7 @@ while(aksi != exit):
         aksi = int(input("> "))
         print("")
 
-        wilayah = aksi-1
+        wilayah = aksi-1    #Ganti wilayah
         print("")
         print("[[Menuju " + listWilayah[wilayah].get_nama() + "...]]")
         print("")

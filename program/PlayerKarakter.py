@@ -1,16 +1,16 @@
 from Status import Status
 from Senjata import Senjata
 import time
-
+# Kelas Karakter yang dimiliki player
 class PlayerKarakter:
     def __init__(self, nama="", gender='', role="", status = "", senjata="", skill="", item=[]):
         self.__nama = nama
         self.__gender = gender
-        self.__role = role
-        self.__status = status
-        self.__skill = skill
-        self.__senjata = senjata
-        self.__item = item
+        self.__role = role          #Role (DPS/Support/Healer)
+        self.__status = status      #Status ATK, HP dll
+        self.__skill = skill        #Skill Karakter
+        self.__senjata = senjata    #Senjata Karakter
+        self.__item = item          #Item yang dibawa Karakter   
 
     # Getter dan setter untuk setiap atribut
     def set_nama(self, nama):
@@ -55,8 +55,10 @@ class PlayerKarakter:
     def get_item(self):
         return self.__item
     
+    # Method menambahkan item yang dimiliki oleh karakter
     def tambah_item(self, listItem):
         if isinstance(listItem, list):
+            # Jika berupa list
             for it in listItem:
                 for myit in self.__item:
                     if(myit.get_nama() == it.get_nama()):
@@ -66,6 +68,7 @@ class PlayerKarakter:
                 else:
                     self.__item.append(it)
         else:
+            # Jika bukan list
             for myit in self.__item:
                 if(myit.get_nama() == listItem.get_nama()):
                     temp = myit.get_jumlah()
@@ -74,6 +77,7 @@ class PlayerKarakter:
             else:
                 self.__item.append(listItem)
 
+    # Method karakter melawan musuh
     def melawan_musuh(self):
         time.sleep(1)
         print("Tidak akan kubiarkan!")
@@ -81,8 +85,9 @@ class PlayerKarakter:
         print("Melawan musuh...")
         time.sleep(3)
 
+    # Method karakter menggunakan skill
     def gunakan_skill(self):
         time.sleep(1)
-        print("Rasakan Ini!")
+        print("Aku tidak akan kalah!")
         time.sleep(0.5)
         print("Skill " + self.get_skill().get_nama())

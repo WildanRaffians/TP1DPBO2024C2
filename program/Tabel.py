@@ -63,6 +63,7 @@ class Tabel:
             # buat garis pemisah baris
             self.pemisah_baris(n_kolom, maxPerKolom, '-')
                 
+
     #Method membuat garis pemisah baris
     def pemisah_baris(self, n_kolom, maxPerKolom, simbol = ''):
         for kolom in range(n_kolom):
@@ -73,13 +74,14 @@ class Tabel:
         print(simbol)
     
 
-
+    # Membuat Tabel/border untuk notif
     def buat_tabel_notif(self, n_baris, isiTabel, warna):
         maxkolom = 0
         lenbaris = []
         
         for index in range(n_baris):
             lenbaris.append(0)
+
         # Mencari maxkolom
         for baris in range(n_baris):
             lenbaris[baris]  = len(isiTabel[baris])
@@ -90,11 +92,13 @@ class Tabel:
                 maxkolom = lenbaris[baris]
         maxkolom += 2
         
+        # Garis Atas
         print("[", end="")
         for i in range(maxkolom):
             print("=", end="")
         print("]")
 
+        # Isi Notif
         for baris in range(n_baris):
             print("[ " + isiTabel[baris], end="")
             if(lenbaris[baris] < maxkolom):
@@ -104,11 +108,14 @@ class Tabel:
                 print(" ", end="")
             print("]")
 
+        # Garis Bawah
         print("[", end="")
         for i in range(maxkolom):
             print("=", end="")
         print("]")
 
+
+    # Membuat tabel untuk menampikan status karakter
     def buat_tabel_status(self, isiTabel1, isiTabel2, head1, head2):
         # Cari maxlen
         maxlen = 29

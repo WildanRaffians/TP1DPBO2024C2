@@ -1,15 +1,11 @@
 from Item import Item
 
+# Kelas item dijual, anak dari item
 class ItemDijual(Item):
-    __harga = 0
-    __status = 0
-
-    from Item import Item
-
     def __init__(self, idItem="", nama="", deskripsi="", jumlah=0, harga=0):
         super().__init__(idItem, nama, deskripsi, jumlah)
         self.__harga = harga
-        self.__status = 0
+        self.__status = 0   #Set default 0, artinya belum habis
 
     def set_harga(self, harga):
         self.__harga = harga

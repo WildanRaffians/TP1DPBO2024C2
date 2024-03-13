@@ -1,14 +1,9 @@
+# Kelas Status
 class Status:
-    __level = 0
-    __maxHP = 0
-    __hp = 0
-    __atk = 0
-    __defense = 0
-
     def __init__(self, level=0, maxHP=0, hp=0, atk=0, defense=0):
         self.__level = level
         self.__maxHP = maxHP
-        self.__hp = hp
+        self.__hp = hp              # HP yang dimiliki saat ini, % dari max HP
         self.__atk = atk
         self.__defense = defense
 

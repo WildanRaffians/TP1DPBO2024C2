@@ -1,17 +1,11 @@
+# Kelas Senjata yang dimiliki Karakter
 class Senjata:
-    __tipe = ""
-    __nama = ""
-    __kenaikanAtk = 0
-    __statBonus = ""
-    __kenaikanStatBonus = 0
-    
-
     def __init__(self, tipe="", nama="", kenaikanAtk=0, statBonus="", kenaikanStatBonus=0):
         self.__tipe = tipe
         self.__nama = nama
-        self.__kenaikanAtk = kenaikanAtk
-        self.__statBonus = statBonus
-        self.__kenaikanStatBonus = kenaikanStatBonus
+        self.__kenaikanAtk = kenaikanAtk             #Jumlah peningkatan ATK, setiap senjata pasti menaikan ATK
+        self.__statBonus = statBonus                 #Status bonus (ATK/HP/DEF), setiap senjata berbeda
+        self.__kenaikanStatBonus = kenaikanStatBonus #Jumlah peningkatan stat bonus
 
     # Getter
     def get_tipe(self):

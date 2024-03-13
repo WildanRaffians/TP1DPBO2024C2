@@ -1,14 +1,10 @@
+# Kelas Skill
 class Skill:
-    __nama = ""
-    __efek = 0
-    __deskripsiEfek = ""
-    __cooldown = 0
-
     def __init__(self, nama="", efek=0, deskripsiEfek="", cooldown=0):
         self.__nama = nama
-        self.__efek = efek
+        self.__efek = efek                      #Jumlah efek yang diberikan
         self.__deskripsiEfek = deskripsiEfek
-        self.__cooldown = cooldown
+        self.__cooldown = cooldown              #Skill hanya dapat dilakukan setiap berapa detik sekali
 
     # Setter
     def set_nama(self, nama):

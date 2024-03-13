@@ -2,16 +2,11 @@ from Item import Item
 import time
 
 class Misi:
-    __nama = ""
-    __deskripsi = ""
-    __hadiah = []
-    __status = 0
-
     def __init__(self, nama, deskripsi, hadiah=[]):
         self.__nama = nama
         self.__deskripsi = deskripsi
-        self.__hadiah = hadiah  # Inisialisasi daftar hadiah
-        status = 0
+        self.__hadiah = hadiah          #Hadiah setelah menyelesaikan misi berupa list item
+        self.__status = 0                      #Set default 0, artinya belum diselesaikan
 
     # Getter dan setter untuk atribut nama
     def set_nama(self, nama):
@@ -41,7 +36,8 @@ class Misi:
     def get_status(self):
         return self.__status
     
-    def melakukan_misi(self):
+    # Method misi sedang dikerjakan
+    def sedang_dikerjakan(self):
         time.sleep(1)
         print("Ayo " + self.get_deskripsi() + "!")
         time.sleep(1)
