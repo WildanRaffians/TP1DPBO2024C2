@@ -1,11 +1,17 @@
+# Kelas NPC
 class Npc:
-    __nama = ""
-    __job = ""
-
-    def __init__(self, nama, job):
+    def __init__(self, id="", nama="", job=""):
+        self.__id = id
         self.__nama = nama
         self.__job = job
 
+    # Getter dan setter untuk atribut id
+    def set_id(self, id):
+        self.__id = id
+
+    def get_id(self):
+        return self.__id
+    
     # Getter dan setter untuk atribut nama
     def set_nama(self, nama):
         self.__nama = nama

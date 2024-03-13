@@ -3,8 +3,8 @@ from Npc import Npc
 
 # Kelas NPC baik, dapat memberi misi dan atau menjual item
 class NiceNPC(Npc):
-    def __init__(self, nama="", job="", itemDijual = [], misi = []):
-        super().__init__(nama, job)
+    def __init__(self, id="", nama="", job="", itemDijual = [], misi = []):
+        super().__init__(id, nama, job)
         self.__itemDijual = itemDijual
         self.__misi = misi
 

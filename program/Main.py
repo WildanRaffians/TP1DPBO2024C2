@@ -25,28 +25,28 @@ init()
 
 # Siapkan data------------------------\
 # Data status
-statusDPS = Status(1, 1000, 100, 500, 800)
-statusSupport = Status(1, 1000, 100, 200, 1000)
-statusHealer = Status(1, 1800, 100, 100, 600)
-statusEnemy1 = Status(5, 1500, 100, 800, 1000)
+statusDPS = Status("ST001", 1, 1000, 100, 500, 800)
+statusSupport = Status("ST002", 1, 1000, 100, 200, 1000)
+statusHealer = Status("ST003", 1, 1800, 100, 100, 600)
+statusEnemy1 = Status("ST004", 5, 1500, 100, 800, 1000)
 
 # Data senjata
 listSenjata = []
-listSenjata.append(Senjata("Pedang", "Dull Blade", 560, "ATK", 35))
-listSenjata.append(Senjata("Panah", "Aqua Simularca", 580, "DEF", 35))
-listSenjata.append(Senjata("Tombak", "Engulfing Lightning", 580, "ATK", 45))
-listSenjata.append(Senjata("Tongkat Sihir", "Everlasting Moonglow", 580, "Max HP", 55))
+listSenjata.append(Senjata("SJT001", "Pedang", "Dull Blade", 560, "ATK", 35))
+listSenjata.append(Senjata("SJT002", "Panah", "Aqua Simularca", 580, "DEF", 35))
+listSenjata.append(Senjata("SJT003", "Tombak", "Engulfing Lightning", 580, "ATK", 45))
+listSenjata.append(Senjata("SJT004", "Tongkat Sihir", "Everlasting Moonglow", 580, "Max HP", 55))
 
 # Data Skill
 listSkillDPS = []
 listSkillHealer = []
 listSkillSupport = []
-terjanganEs = Skill("Terjangan ES", 240, "Menerbangkan bunga es ke arah musuh, Mengakibatkan DMG sebesar 240% ATK", 10)
-bolaApi = Skill("Bola Api", 240, "Menembakkan bola api ke arah musuh, Mengakibatkan DMG sebesar 240% ATK", 10)
+terjanganEs = Skill("SKL001", "Terjangan ES", 240, "Menerbangkan bunga es ke arah musuh, Mengakibatkan DMG sebesar 240% ATK", 10)
+bolaApi = Skill("SKL002", "Bola Api", 240, "Menembakkan bola api ke arah musuh, Mengakibatkan DMG sebesar 240% ATK", 10)
 listSkillDPS.append(terjanganEs)
 listSkillDPS.append(bolaApi)
-listSkillHealer.append(Skill("Kelopak Bunga", 20, "Mengeluarkan kelopak bunga raksasa, Memulihkan HP pemilik skill dan rekan tim sebesar 20% Max HP", 15))
-listSkillSupport.append(Skill("Penempa Baja", 12, "Mengeluarkan Palu penempa, Meningkatkan ATK rekan tim sebesar 12% ATK pengguna", 20))
+listSkillHealer.append(Skill("SKL003", "Kelopak Bunga", 20, "Mengeluarkan kelopak bunga raksasa, Memulihkan HP pemilik skill dan rekan tim sebesar 20% Max HP", 15))
+listSkillSupport.append(Skill("SKL004", "Penempa Baja", 12, "Mengeluarkan Palu penempa, Meningkatkan ATK rekan tim sebesar 12% ATK pengguna", 20))
 
 # Data Item
 item01 = Item("IT0001", "Koin", "Mata uang untuk jual beli", 100000)
@@ -76,13 +76,13 @@ listHadiahK2 = []
 listHadiahK1.append(item21)
 listHadiahK1.append(item22)
 listHadiahK2.append(item23)
-misi1 = Misi("Sang Putri Berkelana", "Mengawal Putri dari Kerajaan Belobog ke kerajaan Penacony", listHadiahK1)
-misi2 = Misi("Bandit Jembatan Meresahkan", "Kalahkan bandit yang ada di jembatan", listHadiahK2)
+misi1 = Misi("MSI001", "Sang Putri Berkelana", "Mengawal Putri dari Kerajaan Belobog ke kerajaan Penacony", listHadiahK1)
+misi2 = Misi("MSI002", "Bandit Jembatan Meresahkan", "Kalahkan bandit yang ada di jembatan", listHadiahK2)
 
 listMisiK = []
 listMisiK.append(misi1)
 listMisiK.append(misi2)
-Khatarine1 = NiceNPC("Khatarine", "Resepsionis Guild", listItemKhatarine, listMisiK)
+Khatarine1 = NiceNPC("NNPC01", "Khatarine", "Resepsionis Guild", listItemKhatarine, listMisiK)
 
 # Data item dan NPC di wilayah
 listItemMondo = []
@@ -98,13 +98,13 @@ listNiceNPCMondo.append(Khatarine1)
 dropItemEnemy1 = []
 dropItemEnemy1.append(item23)
 dropItemEnemy1.append(item24)
-enemyBolobog1 = EnemyNPC("Gordon", "Penjaga Gua", statusEnemy1, terjanganEs, dropItemEnemy1)
+enemyBolobog1 = EnemyNPC("ENPC01", "Gordon", "Penjaga Gua", statusEnemy1, terjanganEs, dropItemEnemy1)
 listEnemyNPCBolobog = []
 listEnemyNPCBolobog.append(enemyBolobog1)
 
 # Wilayah
-mondo = Wilayah("Mondo", "Ini Merupakan kota awal bagi para petualang pemula.", listItemMondo, listNiceNPCMondo)
-bolobog = Wilayah("Bolobog", "Kota yang sudah diselimuti es selama ratusan tahun", listItemBolobog, enemyNpc=listEnemyNPCBolobog)
+mondo = Wilayah("WLY001", "Mondo", "Ini Merupakan kota awal bagi para petualang pemula.", listItemMondo, listNiceNPCMondo)
+bolobog = Wilayah("WLY002", "Bolobog", "Kota yang sudah diselimuti es selama ratusan tahun", listItemBolobog, enemyNpc=listEnemyNPCBolobog)
 
 listWilayah = []
 listWilayah.append(mondo)
@@ -134,6 +134,7 @@ time.sleep(0.5)
 karakter1 = PlayerKarakter()
 # Nama karakter
 namaKar = str(input("Nama Karakter : "))
+karakter1.set_id("PK001")
 karakter1.set_nama(namaKar)
 # Gender Karakter
 gender = 0
@@ -610,24 +611,35 @@ while(aksi != exit):
                                     print("[[Masukan tidak valid]]")
                                     print("")
                                 else:
-                                    temp = listWilayah[wilayah].get_niceNpc()[npc].get_item_dijual()[beli].get_jumlah()
-                                    listWilayah[wilayah].get_niceNpc()[npc].get_item_dijual()[beli].set_jumlah(temp-1)
-                                    item_dibeli = Item()
-                                    item_dibeli.set_idItem(listWilayah[wilayah].get_niceNpc()[npc].get_item_dijual()[beli].get_idItem())
-                                    item_dibeli.set_nama(listWilayah[wilayah].get_niceNpc()[npc].get_item_dijual()[beli].get_nama())
-                                    item_dibeli.set_deskripsi(listWilayah[wilayah].get_niceNpc()[npc].get_item_dijual()[beli].get_deskripsi())
-                                    item_dibeli.set_jumlah(1)
-                                    karakter1.tambah_item(item_dibeli)
-                                    
-                                    print("")
-                                    selamatitem = "1 item telah dibeli!"
-                                    namaitem = listWilayah[wilayah].get_niceNpc()[npc].get_item_dijual()[beli].get_nama()
-                                    isiNotif = [selamatitem, namaitem]
-                                    notif.buat_tabel_notif(2, isiNotif, 0)
-                                    print("")
+                                    temp = listWilayah[wilayah].get_niceNpc()[npc].get_item_dijual()[beli].get_harga()
+                                    uangku = karakter1.get_item()[0].get_jumlah()
 
-                                    if(listWilayah[wilayah].get_niceNpc()[npc].get_item_dijual()[beli].get_jumlah() == 0):
-                                        listWilayah[wilayah].get_niceNpc()[npc].get_item_dijual()[beli].set_status(1)
+                                    if(uangku == 0 or uangku < temp):
+                                        print("")
+                                        print("Uangku tidak cukup!!!")
+                                        print("")
+                                    else:
+                                        karakter1.get_item()[0].set_jumlah(uangku-temp)
+
+                                        temp = listWilayah[wilayah].get_niceNpc()[npc].get_item_dijual()[beli].get_jumlah()
+                                        listWilayah[wilayah].get_niceNpc()[npc].get_item_dijual()[beli].set_jumlah(temp-1)
+                                        item_dibeli = Item()
+                                        item_dibeli.set_idItem(listWilayah[wilayah].get_niceNpc()[npc].get_item_dijual()[beli].get_idItem())
+                                        item_dibeli.set_nama(listWilayah[wilayah].get_niceNpc()[npc].get_item_dijual()[beli].get_nama())
+                                        item_dibeli.set_deskripsi(listWilayah[wilayah].get_niceNpc()[npc].get_item_dijual()[beli].get_deskripsi())
+                                        item_dibeli.set_jumlah(1)
+                                        karakter1.tambah_item(item_dibeli)
+
+                                        
+                                        print("")
+                                        selamatitem = "1 item telah dibeli!"
+                                        namaitem = listWilayah[wilayah].get_niceNpc()[npc].get_item_dijual()[beli].get_nama()
+                                        isiNotif = [selamatitem, namaitem]
+                                        notif.buat_tabel_notif(2, isiNotif, 0)
+                                        print("")
+
+                                        if(listWilayah[wilayah].get_niceNpc()[npc].get_item_dijual()[beli].get_jumlah() == 0):
+                                            listWilayah[wilayah].get_niceNpc()[npc].get_item_dijual()[beli].set_status(1)
 
                                 input("Tekan Enter...")
                                 print("")

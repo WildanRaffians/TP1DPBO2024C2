@@ -3,7 +3,8 @@ from Senjata import Senjata
 import time
 # Kelas Karakter yang dimiliki player
 class PlayerKarakter:
-    def __init__(self, nama="", gender='', role="", status = "", senjata="", skill="", item=[]):
+    def __init__(self, id="", nama="", gender='', role="", status = "", senjata="", skill="", item=[]):
+        self.__id = id
         self.__nama = nama
         self.__gender = gender
         self.__role = role          #Role (DPS/Support/Healer)
@@ -13,6 +14,12 @@ class PlayerKarakter:
         self.__item = item          #Item yang dibawa Karakter   
 
     # Getter dan setter untuk setiap atribut
+    def set_id(self, id):
+        self.__id = id
+
+    def get_id(self):
+        return self.__id
+    
     def set_nama(self, nama):
         self.__nama = nama
 

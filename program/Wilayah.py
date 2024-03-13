@@ -1,6 +1,7 @@
 # Kelas Wilayah
 class Wilayah:
-    def __init__(self, nama="", deskripsi="", item=[], niceNpc=[], enemyNpc=[]):
+    def __init__(self, id="", nama="", deskripsi="", item=[], niceNpc=[], enemyNpc=[]):
+        self.__id = id
         self.__nama = nama
         self.__deskripsi = deskripsi
         self.__item = item
@@ -8,6 +9,12 @@ class Wilayah:
         self.__enemyNpc = enemyNpc
 
     # Setter dan Getter
+    def set_id(self, id):
+        self.__id = id
+
+    def get_id(self):
+        return self.__id
+    
     def set_nama(self, nama):
         self.__nama = nama
 

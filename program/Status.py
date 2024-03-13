@@ -1,6 +1,7 @@
 # Kelas Status
 class Status:
-    def __init__(self, level=0, maxHP=0, hp=0, atk=0, defense=0):
+    def __init__(self, id="", level=0, maxHP=0, hp=0, atk=0, defense=0):
+        self.__id = id
         self.__level = level
         self.__maxHP = maxHP
         self.__hp = hp              # HP yang dimiliki saat ini, % dari max HP
@@ -8,6 +9,9 @@ class Status:
         self.__defense = defense
 
     # Setter
+    def set_id(self, id):
+        self.__id = id
+
     def set_level(self, level):
         self.__level = level
     
@@ -24,6 +28,9 @@ class Status:
         self.__defense = defense
 
     # Getter
+    def get_id(self):
+        return self.__id
+    
     def get_level(self):
         return self.__level
     

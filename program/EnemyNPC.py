@@ -5,8 +5,8 @@ import time
 
 # Kelas untuk NPC yang bisa dilawan / musuh
 class EnemyNPC(Npc):
-    def __init__(self, nama="", job="", status="", skill="", dropItem=[]):
-        super().__init__(nama, job)
+    def __init__(self, id="", nama="", job="", status="", skill="", dropItem=[]):
+        super().__init__(id, nama, job)
         self.__status = status
         self.__skill = skill
         self.__dropItem = dropItem
