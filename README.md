@@ -9,7 +9,7 @@ Sebuah Program python simulasi game dengan menerapkan konsep OOP (Kelas, Objek, 
 
 <h3>Desain Program</h3>
 
-![DPBOTP1-Halaman-1 (1)](https://github.com/WildanRaffians/TP1DPBO2024C2/assets/134181656/c9a13a83-8b1b-47e4-928f-3307c2655354)
+![DPBOTP1-Halaman-1 (2)](https://github.com/WildanRaffians/TP1DPBO2024C2/assets/134181656/200fca23-1517-4abd-9c2a-8ba8da454d81)
 
 Program ini memiliki 13 Kelas.
 <ol>
